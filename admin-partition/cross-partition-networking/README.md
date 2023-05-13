@@ -4,8 +4,8 @@ To understand Admin Partition cross-partition networking feature
 We gonna have an `frontend` app talks to `backend` app across 2 admin partition `foo` and `bar`. 
 The app is deployed as `Pod` in 2 Kubernetes clusters
 
-![app](admin-partition/cross-partition-networking/app.png)
-![arch](admin-partition/cross-partition-networking/arch.png)
+![app](app.png)
+![arch](arch.png)
 
 # Requirements
 
