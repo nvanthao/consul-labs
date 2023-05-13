@@ -1,0 +1,40 @@
+global:
+  enabled: false
+  logLevel: "debug"
+  name: consul
+  adminPartitions:
+    enabled: true
+    name: bar
+  datacenter: dc1
+  enableConsulNamespaces: true
+
+  acls:
+    manageSystemACLs: true
+    bootstrapToken:
+      secretName: bootstrap-acl-token
+      secretKey: key
+
+  enterpriseLicense:
+    secretName: license
+    secretKey: key
+
+externalServers:
+  enabled: true
+  httpsPort: 8500
+  hosts:
+    - 192.168.64.1
+  k8sAuthMethodHost: https://192.168.64.6:6443
+
+dns:
+  enabled: true
+  enableRedirection: true
+
+connectInject:
+  replicas: 1
+
+meshGateway:
+  enabled: true
+  replicas: 1
+  service:
+    type: LoadBalancer
+    port: 8443
