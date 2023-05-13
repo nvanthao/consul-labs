@@ -51,6 +51,19 @@ For each cluster
 k create secret generic --from-literal=key=$(cat license) license
 k create secret generic --from-literal=key=root bootstrap-acl-token
 ```
+## Install Consul in K8S
+
+Before installing Consul in K8S, make sure the Helm values file is updated with correct IP of the VM for field `k8sAuthMethodHost` 
+The IP can be retrieved with `multipass info k8s-foo`
+
+```yaml
+externalServers:
+  enabled: true
+  httpsPort: 8500
+  hosts:
+    - 192.168.64.1
+  k8sAuthMethodHost: https://192.168.64.6:6443
+```
 
 ## Install K8S on foo cluster
 
